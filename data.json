@@ -1,6 +1,6 @@
 {
   "logo": {
-    "main": "Folio",
+    "main": "PortFolio",
     "accent": "dex"
   },
   "hero": {
@@ -24,17 +24,17 @@
     }
   ],
   "contact": {
-    "email": "your.email@example.com",
-    "phone": "+84 123 456 789",
-    "website": "https://yourwebsite.com"
+    "email": "tranhai68.home@gmail.com",
+    "phone": "+84868258686",
+    "website": "https://tranhai68.github.io/profile/"
   },
   "social": {
-    "facebook": "https://facebook.com/yourprofile",
-    "instagram": "https://instagram.com/yourprofile",
+    "facebook": "https://www.facebook.com/tranhai68.rell",
+    "instagram": "https://www.instagram.com/tranhai68.rell",
     "telegram": "https://t.me/yourprofile",
-    "zalo": "https://zalo.me/yourphone",
+    "zalo": "https://zalo.me/0868258686",
     "linkedin": "https://linkedin.com/in/yourprofile",
-    "github": "https://github.com/yourprofile"
+    "github": "https://tranhai68.github.io"
   },
   "media": {
     "heroImage": "./images/hero-banner.png",
@@ -97,5 +97,5 @@
       }
     ]
   },
-  "lastUpdated": "2026-01-29T10:22:31.068Z"
+  "lastUpdated": "2026-01-29T10:23:29.801Z"
 }
