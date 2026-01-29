@@ -48,6 +48,10 @@
                 <span class="nav-icon">👤</span>
                 <span class="nav-label">About Me</span>
             </button>
+            <button class="nav-item" data-tab="awards">
+                <span class="nav-icon">🏆</span>
+                <span class="nav-label">Awards</span>
+            </button>
         </nav>
 
         <div class="sidebar-footer">
@@ -420,6 +424,39 @@
                             <input type="text" id="highlight-3-label" placeholder="Hài Lòng">
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Awards Tab -->
+            <section class="tab-content" id="awards-tab">
+                <div class="tab-header">
+                    <h2>Awards & Recognition</h2>
+                    <p>Quản lý các giải thưởng và thành tích</p>
+                </div>
+
+                <!-- Section Title -->
+                <div class="form-section">
+                    <h3>📋 Section Title</h3>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="awards-title" placeholder="Proud Moments, Shared Success">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="awards-description" rows="2"
+                            placeholder="A few highlights from industry juries..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Awards List -->
+                <div class="form-section">
+                    <h3>🏆 Awards</h3>
+                    <div id="awards-list">
+                        <!-- Dynamically populated -->
+                    </div>
+                    <button class="add-project-btn" onclick="addAward()">
+                        ➕ Add New Award
+                    </button>
                 </div>
             </section>
         </div>

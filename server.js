@@ -270,6 +270,45 @@ function generateIndexHTML(data) {
         );
     }
 
+    // Update Awards Section
+    if (data.awards) {
+        // Update title
+        if (data.awards.title) {
+            html = html.replace(
+                /<h2 class="mb-lg">[\s\S]*?<\/h2>(\s*<p style="max-width: 600px)/,
+                `<h2 class="mb-lg">${escapeHtml(data.awards.title).replace(',', ',<br>')}</h2>$1`
+            );
+        }
+
+        // Update description
+        if (data.awards.description) {
+            html = html.replace(
+                /<p style="max-width: 600px; margin-bottom: 3rem; color: var\(--color-text-secondary\);">[\s\S]*?<\/p>(\s*<div class="awards-grid">)/,
+                `<p style="max-width: 600px; margin-bottom: 3rem; color: var(--color-text-secondary);">${escapeHtml(data.awards.description)}</p>$1`
+            );
+        }
+
+        // Update award cards
+        if (data.awards.items && data.awards.items.length > 0) {
+            const awardsHtml = data.awards.items.map(award => `
+                <div class="award-card">
+                    <p class="award-year">${escapeHtml(award.year)}</p>
+                    <h4 class="award-title">${escapeHtml(award.title)}</h4>
+                    <p class="award-source">${escapeHtml(award.source)}</p>
+                </div>`).join('\n');
+
+            html = html.replace(
+                /<div class="awards-grid">[\s\S]*?<\/div>\s*<\/div>\s*<\/section>\s*<!-- Contact Section -->/,
+                `<div class="awards-grid">${awardsHtml}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->`
+            );
+        }
+    }
+
     return html;
 }
 

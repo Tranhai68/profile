@@ -95,6 +95,16 @@ let siteData = {
             { value: '100%', label: 'Hài Lòng' }
         ]
     },
+    awards: {
+        title: 'Proud Moments, Shared Success',
+        description: 'A few highlights from industry juries and design communities who\'ve recognized the work.',
+        items: [
+            { year: '2025', title: 'Site of the Day', source: 'Awwwards - Portfolio Redesign' },
+            { year: '2024', title: 'Best UI Design', source: 'CSS Design Awards' },
+            { year: '2024', title: 'Gold Winner', source: 'Indigo Design Awards - Branding' },
+            { year: '2023', title: 'Innovation Award', source: 'Design Week - Product Design' }
+        ]
+    },
     lastUpdated: null
 };
 
@@ -647,3 +657,91 @@ function showToast(message) {
 
 // Make switchTab globally accessible
 window.switchTab = switchTab;
+
+// ===========================
+// AWARDS MANAGEMENT
+// ===========================
+
+function renderAwards() {
+    const container = document.getElementById('awards-list');
+    if (!container || !siteData.awards) return;
+
+    // Populate title and description
+    const titleInput = document.getElementById('awards-title');
+    const descInput = document.getElementById('awards-description');
+    if (titleInput) titleInput.value = siteData.awards.title || '';
+    if (descInput) descInput.value = siteData.awards.description || '';
+
+    // Render award items
+    if (!siteData.awards.items) siteData.awards.items = [];
+
+    container.innerHTML = siteData.awards.items.map((award, index) => `
+        <div class="project-item" style="margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <input type="text" value="${award.year || ''}" placeholder="Year (2024)" 
+                    onchange="updateAward(${index}, 'year', this.value)" style="flex: 1;">
+                <input type="text" value="${escapeHtmlAttr(award.title)}" placeholder="Award Title" 
+                    onchange="updateAward(${index}, 'title', this.value)" style="flex: 2;">
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <input type="text" value="${escapeHtmlAttr(award.source)}" placeholder="Source (Awwwards, CSS Design Awards...)" 
+                    onchange="updateAward(${index}, 'source', this.value)" style="flex: 1;">
+                <button onclick="deleteAward(${index})" style="background: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">🗑️</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function escapeHtmlAttr(str) {
+    if (!str) return '';
+    return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function addAward() {
+    if (!siteData.awards) siteData.awards = { title: '', description: '', items: [] };
+    if (!siteData.awards.items) siteData.awards.items = [];
+
+    siteData.awards.items.push({
+        year: new Date().getFullYear().toString(),
+        title: 'New Award',
+        source: 'Source Name'
+    });
+    renderAwards();
+    saveData();
+}
+
+function updateAward(index, field, value) {
+    if (siteData.awards && siteData.awards.items[index]) {
+        siteData.awards.items[index][field] = value;
+    }
+}
+
+function deleteAward(index) {
+    if (siteData.awards && siteData.awards.items) {
+        siteData.awards.items.splice(index, 1);
+        renderAwards();
+        saveData();
+    }
+}
+
+function collectAwardsData() {
+    const titleInput = document.getElementById('awards-title');
+    const descInput = document.getElementById('awards-description');
+
+    if (!siteData.awards) siteData.awards = { title: '', description: '', items: [] };
+
+    if (titleInput) siteData.awards.title = titleInput.value;
+    if (descInput) siteData.awards.description = descInput.value;
+}
+
+// Add to collectFormData
+const originalCollectFormData = collectFormData;
+collectFormData = function () {
+    originalCollectFormData();
+    collectAwardsData();
+};
+
+// Render awards on page load
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(renderAwards, 100);
+});
