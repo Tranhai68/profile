@@ -226,6 +226,50 @@ function generateIndexHTML(data) {
         }
     }
 
+    // Update Birthday and Age
+    if (data.about.birthday) {
+        const date = new Date(data.about.birthday);
+        const birthdayFormatted = date.toLocaleDateString('vi-VN', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+        html = html.replace(
+            /<span class="info-value" id="display-birthday">.*?<\/span>/,
+            `<span class="info-value" id="display-birthday">${birthdayFormatted}</span>`
+        );
+    }
+    if (data.about.age) {
+        html = html.replace(
+            /<span class="info-value" id="display-age">.*?<\/span>/,
+            `<span class="info-value" id="display-age">${data.about.age} tuổi</span>`
+        );
+    }
+
+    // Update Vision
+    if (data.about.vision) {
+        html = html.replace(
+            /<p class="vision-text" id="display-vision">[\s\S]*?<\/p>/,
+            `<p class="vision-text" id="display-vision">${escapeHtml(data.about.vision)}</p>`
+        );
+    }
+
+    // Update Mission
+    if (data.about.mission) {
+        html = html.replace(
+            /<p class="mission-text" id="display-mission">[\s\S]*?<\/p>/,
+            `<p class="mission-text" id="display-mission">${escapeHtml(data.about.mission)}</p>`
+        );
+    }
+
+    // Update Career Goals
+    if (data.about.careerGoals) {
+        html = html.replace(
+            /<p class="career-text" id="display-career">[\s\S]*?<\/p>/,
+            `<p class="career-text" id="display-career">${escapeHtml(data.about.careerGoals)}</p>`
+        );
+    }
+
     return html;
 }
 
