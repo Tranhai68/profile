@@ -99,8 +99,8 @@ let siteData = {
 };
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    loadData();
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadData();
     initTabs();
     initEventListeners();
     updateDashboard();
@@ -113,11 +113,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // DATA MANAGEMENT
 // ===========================
 
-function loadData() {
+async function loadData() {
+    // First try to load from server (for cross-device sync)
+    try {
+        const response = await fetch('http://localhost:3001/api/data');
+        if (response.ok) {
+            const serverData = await response.json();
+            siteData = serverData;
+            // Also update localStorage
+            localStorage.setItem('portfolioData', JSON.stringify(siteData));
+            console.log('✅ Data loaded from server (synced)');
+            return;
+        }
+    } catch (e) {
+        console.log('ℹ️ Server not available, loading from localStorage');
+    }
+
+    // Fallback to localStorage
     const saved = localStorage.getItem('portfolioData');
     if (saved) {
         try {
             siteData = JSON.parse(saved);
+            console.log('📁 Data loaded from localStorage');
         } catch (e) {
             console.error('Error loading data:', e);
         }
