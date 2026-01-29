@@ -249,24 +249,39 @@ function generateIndexHTML(data) {
     // Update Vision
     if (data.about.vision) {
         html = html.replace(
-            /<p class="vision-text" id="display-vision">[\s\S]*?<\/p>/,
-            `<p class="vision-text" id="display-vision">${escapeHtml(data.about.vision)}</p>`
+            /<p id="display-vision">[\s\S]*?<\/p>/,
+            `<p id="display-vision">${escapeHtml(data.about.vision)}</p>`
+        );
+        // Show the vision-mission section
+        html = html.replace(
+            /<div class="vision-mission-section" id="vision-mission-section" style="display: none;">/,
+            `<div class="vision-mission-section" id="vision-mission-section" style="display: grid;">`
         );
     }
 
     // Update Mission
     if (data.about.mission) {
         html = html.replace(
-            /<p class="mission-text" id="display-mission">[\s\S]*?<\/p>/,
-            `<p class="mission-text" id="display-mission">${escapeHtml(data.about.mission)}</p>`
+            /<p id="display-mission">[\s\S]*?<\/p>/,
+            `<p id="display-mission">${escapeHtml(data.about.mission)}</p>`
+        );
+        // Show the vision-mission section
+        html = html.replace(
+            /<div class="vision-mission-section" id="vision-mission-section" style="display: none;">/,
+            `<div class="vision-mission-section" id="vision-mission-section" style="display: grid;">`
         );
     }
 
     // Update Career Goals
     if (data.about.careerGoals) {
         html = html.replace(
-            /<p class="career-text" id="display-career">[\s\S]*?<\/p>/,
-            `<p class="career-text" id="display-career">${escapeHtml(data.about.careerGoals)}</p>`
+            /<p id="display-career">[\s\S]*?<\/p>/,
+            `<p id="display-career">${escapeHtml(data.about.careerGoals)}</p>`
+        );
+        // Show the career goals section
+        html = html.replace(
+            /<div class="career-goals-section" id="career-goals-section" style="display: none;">/,
+            `<div class="career-goals-section" id="career-goals-section" style="display: block;">`
         );
     }
 
