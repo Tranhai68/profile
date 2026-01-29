@@ -1,95 +1,101 @@
 {
-    "logo": {
-        "main": "PortFolio",
-        "accent": "dex"
+  "logo": {
+    "main": "Folio",
+    "accent": "dex"
+  },
+  "hero": {
+    "subtitle": "Hi ! i'm Trần Hải",
+    "title1": "Business Grouwth",
+    "title2": "Manager",
+    "description": "\"Growth isn't a matter of luck — it's a formula. I help businesses implement it through strategy and data.\""
+  },
+  "stats": [
+    {
+      "value": "10+",
+      "label": "Years Experience"
     },
-    "hero": {
-        "subtitle": "Hi ! i'm Trần Hải",
-        "title1": "Business Grouwth",
-        "title2": "Manager",
-        "description": "\"Growth isn't a matter of luck — it's a formula. I help businesses implement it through strategy and data.\""
+    {
+      "value": "100+",
+      "label": "Projects Delivered"
     },
-    "stats": [
-        {
-            "value": "10+",
-            "label": "Years Experience"
-        },
-        {
-            "value": "100+",
-            "label": "Projects Delivered"
-        },
-        {
-            "value": "98%",
-            "label": "Client Satisfaction"
-        }
+    {
+      "value": "98%",
+      "label": "Client Satisfaction"
+    }
+  ],
+  "contact": {
+    "email": "your.email@example.com",
+    "phone": "+84 123 456 789",
+    "website": "https://yourwebsite.com"
+  },
+  "social": {
+    "facebook": "https://facebook.com/yourprofile",
+    "instagram": "https://instagram.com/yourprofile",
+    "telegram": "https://t.me/yourprofile",
+    "zalo": "https://zalo.me/yourphone",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "github": "https://github.com/yourprofile"
+  },
+  "media": {
+    "heroImage": "./images/hero-banner.png",
+    "profileImage": "./images/profile.jpg",
+    "personalPhoto": "./images/personal-photo.jpg",
+    "productImages": [
+      "./images/product-1.jpg",
+      "./images/product-2.jpg",
+      "./images/product-3.jpg",
+      "./images/product-4.jpg",
+      "./images/product-5.jpg"
     ],
-    "contact": {
-        "email": "tranhai68.home@gmail.com",
-        "phone": "+84 868 258 686",
-        "website": "https://tranhai68.github.io/profile/"
+    "youtubeUrl": "",
+    "videoIntro": "./videos/introduction.mp4"
+  },
+  "projects": [
+    {
+      "title": "Marketing Metric DEZUS | 2025",
+      "category": "Marketing Metric",
+      "description": "Triển khai Kinh Doanh và MKT cho thương hiệu thời trang DEZUS, đạt doanh thu gấp 3 năm 2025 ",
+      "link": "https://docs.google.com/spreadsheets/d/1B4BnhDkmGx5Dzy7TMEacQdRUnAp2-K2dXuFYtXUNdL4/edit?gid=1020694091#gid=1020694091",
+      "image": "https://kenh14cdn.com/203336854389633024/2025/6/4/photo-1-17490278404151445511525-1749027908061-17490279082361023750596-1749029969498-17490299696751601757879.jpg"
     },
-    "social": {
-        "facebook": "https://facebook.com/yourprofile",
-        "instagram": "https://instagram.com/yourprofile",
-        "telegram": "https://t.me/yourprofile",
-        "zalo": "https://zalo.me/yourphone",
-        "linkedin": "https://linkedin.com/in/yourprofile",
-        "github": "https://github.com/tranhai68"
+    {
+      "title": "DEZUS Fashion Show 2025 | 5 Chau",
+      "category": "Fashion & Branding",
+      "description": "Khởi tạo và triển khai thành công 1 sự kiện thời trang lớn, \"5 Chau\", Đạt 20 triệu view trên tất cả các nền tảng MXK ",
+      "link": "https://drive.google.com/drive/folders/1cMkbjeJWIzwpQvrdGEGAGAY0iX-45Fdf?usp=sharing",
+      "image": "https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/487062221_633619889516635_7802349345611203377_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEc6KUQt-h_Vag4_K7QCOoY2hYDh9sLHMbaFgOH2wscxqZJzlnkViYfMwFPW9c3wp7-B-vGsC6LnL7VGuWDVisO&_nc_ohc=8UJy6WhdraYQ7kNvwHDyHN4&_nc_oc=Adkm1292lM9NxSzDuqxmcKKRHE-stJJ3kxSJpTirVYqYFfM3XbdjJ9TWWaWPmpKGhXo&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=Y9NaLJgQsv9Voq4vZYd78g&oh=00_AfoB3YyUPTFhtWLc3c3AHNB8Sri7VxcJ4TWc-MqUTnVHJw&oe=6980FF71"
     },
-    "media": {
-        "heroImage": "./images/hero-banner.png",
-        "profileImage": "./images/profile.jpg",
-        "personalPhoto": "./images/personal-photo.jpg",
-        "productImages": [],
-        "youtubeUrl": "",
-        "videoIntro": "./videos/introduction.mp4"
-    },
-    "projects": [
-        {
-            "title": "Marketing Metric DEZUS | 2025",
-            "category": "Marketing Metric",
-            "description": "Triển khai Kinh Doanh và MKT cho thương hiệu thời trang DEZUS, đạt doanh thu gấp 3 năm 2025",
-            "image": "https://kenh14cdn.com/203336854389633024/2025/6/4/photo-1-17483702798781839498498.png",
-            "link": "https://docs.google.com/spreadsheets/d/1B4BnhDkmGx5Dzy7TMEa"
-        },
-        {
-            "title": "DEZUS Fashion Show 2025 | 5 Châu",
-            "category": "Fashion & Branding",
-            "description": "Khởi tạo và triển khai thành công 1 sự kiện thời trang lớn, \"5 Châu\", Đạt 20 triệu view trên tất cả các nền tảng MXH",
-            "image": "./images/project-2.jpg",
-            "link": "#"
-        },
-        {
-            "title": "Khai Trương Cơ Sở ĐÀ Nẵng",
-            "category": "Branding & Grand Opening",
-            "description": "Lên kế hoạch và triển khai chương trình Khai Trương cơ sở mới của thương hiệu DEZUS tại Đà Nẵng với 5 nghệ sĩ và hàng trăm khách mời, đạt 50tr view trên tất cả các nền tảng MXH",
-            "image": "./images/project-3.jpg",
-            "link": "#"
-        }
-    ],
-    "about": {
-        "name": "Trần Hải",
-        "birthday": "1997-12-25",
-        "age": 28,
-        "bioIntro": "Tôi là Trần Văn Hải - một Business Growth Marketing / Marketing Manager với hơn 5 năm kinh nghiệm trong việc xây dựng chiến lược tăng trưởng cho doanh nghiệp thông qua dữ liệu, hệ thống và tối ưu hành trình khách hàng. Tôi có thế mạnh trong việc kết nối chiến lược Kinh Doanh - Marketing - Công Nghệ, triển khai từ hoạch định, vận hành đến đo lường và tối ưu hiệu suất.",
-        "bioDetail": "Tôi có khả năng xây dựng và vận hành toàn bộ hệ thống marketing từ con số 0, bao gồm nghiên cứu thị trường, xác định insight khách hàng, xây dựng chiến lược thương hiệu, thiết kế phễu tăng trưởng và triển khai đa kênh (Paid Media, Social, SEO, Content, Email, Automation). Tôi có thể lập kế hoạch marketing tổng thể theo tháng/quý/năm, quản lý ngân sách, đo lường hiệu suất, tối ưu chuyển đổi và liên tục cải thiện chỉ số tăng trưởng.",
-        "vision": "",
-        "mission": "",
-        "careerGoals": "",
-        "highlights": [
-            {
-                "value": "5+",
-                "label": "Năm Kinh Nghiệm"
-            },
-            {
-                "value": "50+",
-                "label": "Dự Án Hoàn Thành"
-            },
-            {
-                "value": "100%",
-                "label": "Hài Lòng"
-            }
-        ]
-    },
-    "lastUpdated": "2026-01-29T17:00:00.000Z"
+    {
+      "title": "Khai Trương cơ Sở ĐÀ Nẵng",
+      "category": "Branding|Grand Opening",
+      "description": "Lên kế hoạch và triển khai chương trình Khai Trương cơ sở mới của thương hiệu DEZUS tại Đà Nẵng với 5 nghệ sĩ và hàng trăm khách mời, đạt 50tr view trên tất cả các nền tảng MXH",
+      "link": "https://drive.google.com/drive/folders/1zPVbwKPe2Rhu7Y9yz0CyHuT3nDBKCJ6z?usp=sharing",
+      "image": "https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/489286076_643249555220335_5484823724207102052_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFoMJqebGAWXBk3L8KsxJM9JZQbtXP57RYllBu1c_ntFrpbIicjqtz7mM7d-e39Z3Gjj8B90HD5PzD5-cGLvOgx&_nc_ohc=qlJUnD2Xju4Q7kNvwGGhYWa&_nc_oc=AdmUExg4KcG3_3yUcT8oLNfcPe0YQnMCwK7bwAc34oZIbnnOXEP0VVtsqeupyLPeb8Y&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=A8VnvzW_L5U6YlZvuI76kQ&oh=00_AfqCahRzYrRTi2to9HoWqhf_SXv93oLnuzyXoxGeATh2Yw&oe=6980E9C8"
+    }
+  ],
+  "about": {
+    "name": "Trần Hải",
+    "birthday": "",
+    "age": 0,
+    "bioIntro": "Xin chào! Tôi là một nhà thiết kế sáng tạo với niềm đam mê biến ý tưởng thành hiện thực. Với hơn nhiều năm kinh nghiệm trong lĩnh vực thiết kế, tôi đã có cơ hội làm việc với nhiều dự án đa dạng từ branding đến UI/UX.",
+    "bioDetail": "Tôi tin rằng thiết kế tốt không chỉ đẹp mắt mà còn phải giải quyết được vấn đề thực tế. Mỗi dự án tôi thực hiện đều được đầu tư tâm huyết để mang lại giá trị tốt nhất.",
+    "vision": "",
+    "mission": "",
+    "careerGoals": "",
+    "highlights": [
+      {
+        "value": "5+",
+        "label": "Năm Kinh Nghiệm"
+      },
+      {
+        "value": "50+",
+        "label": "Dự Án Hoàn Thành"
+      },
+      {
+        "value": "100%",
+        "label": "Hài Lòng"
+      }
+    ]
+  },
+  "lastUpdated": "2026-01-29T10:21:50.202Z"
 }
