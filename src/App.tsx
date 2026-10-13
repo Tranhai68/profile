@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { HeroSection } from './components/HeroSection';
-import { MarqueeSection } from './components/MarqueeSection';
-import { AboutSection } from './components/AboutSection';
-import { SkillsSection } from './components/SkillsSection';
-import { ServicesSection } from './components/ServicesSection';
-import { ProjectsSection } from './components/ProjectsSection';
-import { FooterSection } from './components/FooterSection';
+import React, { useState, useEffect, useRef } from 'react';
+import { Hero3DSection } from './components/Hero3DSection';
+import { DashboardLayout } from './components/dashboard/DashboardLayout';
 import { AdminPanel } from './components/AdminPanel';
+import { getStoredPortfolioData, PortfolioData } from './data/portfolioData';
 
 export const App: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [data, setData] = useState<PortfolioData>(() => getStoredPortfolioData());
+  const [activeTab, setActiveTab] = useState<string>('overview');
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    return localStorage.getItem('portfolio_theme') === 'dark';
+  });
 
+  const dashboardRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  // Sync Hash for Admin
   useEffect(() => {
     const checkHash = () => {
       if (window.location.hash === '#admin') {
@@ -25,6 +30,30 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', checkHash);
   }, []);
 
+  // Listen for data updates from AdminPanel
+  useEffect(() => {
+    const handleDataUpdate = () => {
+      setData(getStoredPortfolioData());
+    };
+    window.addEventListener('portfolio_data_updated', handleDataUpdate);
+    return () => window.removeEventListener('portfolio_data_updated', handleDataUpdate);
+  }, []);
+
+  // Theme toggle effect
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('portfolio_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('portfolio_theme', 'light');
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   const openAdmin = () => {
     window.location.hash = '#admin';
     setIsAdmin(true);
@@ -35,35 +64,43 @@ export const App: React.FC = () => {
     setIsAdmin(false);
   };
 
+  const scrollToDashboard = () => {
+    if (dashboardRef.current) {
+      dashboardRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToHero = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   if (isAdmin) {
     return <AdminPanel onClose={closeAdmin} />;
   }
 
   return (
-    <div
-      className="min-h-screen w-full bg-[#0C0C0C] text-[#D7E2EA] font-kanit"
-      style={{ overflowX: 'clip' }}
-    >
-      {/* 1. Hero Section */}
-      <HeroSection />
+    <div className="min-h-screen w-full flex flex-col font-sans transition-colors duration-300">
+      {/* 1. Whimsical 3D Animation Hero Section (Inspired by motionsites.ai future-3d-portfolio) */}
+      <div ref={heroRef} className="w-full">
+        <Hero3DSection
+          data={data}
+          onExploreDashboard={scrollToDashboard}
+          onOpenAdmin={openAdmin}
+        />
+      </div>
 
-      {/* 2. Marquee Section */}
-      <MarqueeSection />
-
-      {/* 3. About Section */}
-      <AboutSection />
-
-      {/* 4. Skills Section */}
-      <SkillsSection />
-
-      {/* 5. Services Section */}
-      <ServicesSection />
-
-      {/* 6. Projects Section */}
-      <ProjectsSection />
-
-      {/* 7. Footer Section (Liên hệ trực tiếp, không còn form gửi tin nhắn) */}
-      <FooterSection onOpenAdmin={openAdmin} />
+      {/* 2. Main Executive SaaS Dashboard & Control Panel (Inspired by Modern System Monitor) */}
+      <div ref={dashboardRef} id="dashboard-system" className="w-full">
+        <DashboardLayout
+          data={data}
+          activeTab={activeTab}
+          onSelectTab={setActiveTab}
+          onOpenAdmin={openAdmin}
+          darkMode={darkMode}
+          onToggleDarkMode={toggleDarkMode}
+          onScrollToHero={scrollToHero}
+        />
+      </div>
     </div>
   );
 };

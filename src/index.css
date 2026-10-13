@@ -3,39 +3,83 @@
 @tailwind utilities;
 
 @layer base {
-  html, body, #root {
-    background-color: #0C0C0C;
-    color: #D7E2EA;
-    font-family: 'Kanit', sans-serif;
-    box-sizing: border-box;
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
     margin: 0;
     padding: 0;
-    overflow-x: clip;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: #F4F6F9;
+    color: #1E293B;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  *, *::before, *::after {
-    box-sizing: border-box;
+  .dark body {
+    background-color: #0B0F17;
+    color: #E2E8F0;
   }
 }
 
-.hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* 3D Perspective & Hologram Utilities */
+.perspective-1000 {
+  perspective: 1000px;
 }
 
-/* Custom scrollbar */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.glass-hologram {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.15), 0 0 20px rgba(45, 212, 191, 0.2);
+}
+
+.glass-hologram-dark {
+  background: rgba(19, 27, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(45, 212, 191, 0.15);
+}
+
+/* Dashboard Dot-Matrix Grid Effect for Hardware Widgets */
+.dot-matrix {
+  background-image: radial-gradient(circle, currentColor 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #0C0C0C;
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #262626;
-  border-radius: 4px;
+  background: #CBD5E1;
+  border-radius: 9999px;
 }
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #94A3B8;
 }
+
+/* Scanline Effect */
+.scanline-overlay {
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(45, 212, 191, 0.08) 50%, rgba(45, 212, 191, 0.08));
+  background-size: 100% 4px;
+}
+
