@@ -134,9 +134,16 @@ export const AboutSection: React.FC = () => {
                           )}
                           {exp.badge}
                         </span>
-                        <span className="text-xs text-neutral-400 font-medium">
-                          {exp.brand}
-                        </span>
+                        <div className="flex items-center gap-2">
+                          {exp.period && (
+                            <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-neutral-800 text-purple-300 border border-purple-500/20">
+                              {exp.period}
+                            </span>
+                          )}
+                          <span className="text-xs text-neutral-400 font-medium">
+                            {exp.brand}
+                          </span>
+                        </div>
                       </div>
 
                       {/* Company Name */}

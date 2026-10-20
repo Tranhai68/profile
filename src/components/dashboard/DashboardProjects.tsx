@@ -229,23 +229,31 @@ export const DashboardProjects: React.FC<DashboardProjectsProps> = ({ data }) =>
                 </p>
 
                 {/* Gallery Images in Modal */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <img
-                    src={activeModalProject.col1Img1}
-                    alt="Detail 1"
-                    className="w-full h-48 sm:h-60 rounded-xl object-cover border border-slate-200 dark:border-slate-700"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = './images/product-1.jpg';
-                    }}
-                  />
-                  <img
-                    src={activeModalProject.col2Img}
-                    alt="Detail 2"
-                    className="w-full h-48 sm:h-60 rounded-xl object-cover border border-slate-200 dark:border-slate-700"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = './images/hero-banner.png';
-                    }}
-                  />
+                <div className="space-y-2 pt-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                    Hình ảnh chiến dịch ({activeModalProject.galleryImages ? activeModalProject.galleryImages.length : 2} hình):
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {(activeModalProject.galleryImages && activeModalProject.galleryImages.length > 0
+                      ? activeModalProject.galleryImages
+                      : [activeModalProject.col1Img1, activeModalProject.col2Img]
+                    ).map((imgSrc, iIdx) => (
+                      <div
+                        key={iIdx}
+                        className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 aspect-[3/4] group"
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`${activeModalProject.name} showcase ${iIdx + 1}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = './images/product-1.jpg';
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">

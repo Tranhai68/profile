@@ -8,6 +8,7 @@ export interface ExperienceItem {
   company: string;
   brand: string;
   role: string;
+  period: string;
   category: 'beauty' | 'fashion';
   description: string;
   badge: string;
@@ -22,6 +23,7 @@ export interface ProjectItem {
   col1Img1: string;
   col1Img2: string;
   col2Img: string;
+  galleryImages?: string[];
 }
 
 export interface SkillCategory {
@@ -455,7 +457,7 @@ export const initialPortfolioData: PortfolioData = {
         title: 'Signature Outerwear Line',
       },
       {
-        src: './images/project-2.jpg',
+        src: './images/montsand-editorial.png',
         tag: 'Montsand',
         title: 'Retail Performance Growth',
       },
@@ -465,7 +467,7 @@ export const initialPortfolioData: PortfolioData = {
         title: 'Visual Merchandising',
       },
       {
-        src: './images/Project-3.jpg',
+        src: './images/dezus-show-1.png',
         tag: 'Fashion Runway',
         title: 'Show 5 Châu Production',
       },
@@ -482,17 +484,17 @@ export const initialPortfolioData: PortfolioData = {
     ],
     row2: [
       {
-        src: './images/project-4.jpg',
+        src: './images/dezus-danang-1.jpg',
         tag: 'Grand Opening',
         title: 'Showroom Đà Nẵng Launch',
       },
       {
-        src: './images/product-4.jpg',
-        tag: 'Guno Apparel',
-        title: 'Streetwear Growth Series',
+        src: './images/guno-nt-qt-1.png',
+        tag: 'Guno x Ngọc Trinh',
+        title: 'Streetwear 500M+ Views',
       },
       {
-        src: './images/project-5.jpg',
+        src: './images/dezus-show-3.png',
         tag: 'Mega Event',
         title: '20M+ Views Across Channels',
       },
@@ -529,40 +531,44 @@ export const initialPortfolioData: PortfolioData = {
     ],
     experiences: [
       {
-        company: 'CÔNG TY TNHH SHYNH BEAUTY',
-        brand: 'Shynh Premium',
-        role: 'Leader Marketing tại Shynh Premium',
-        category: 'beauty',
-        badge: 'Mảng Beauty & Thẩm Mỹ',
-        description:
-          'Dẫn dắt các chiến dịch truyền thông và định vị thương hiệu cho Viện thẩm mỹ công nghệ cao Shynh Premium. Tiếp cận và chuyển đổi tệp khách hàng phân khúc cao cấp.',
-      },
-      {
         company: 'CÔNG TY TNHH GUNO',
         brand: 'Thời trang Guno',
         role: 'Head Of Marketing',
+        period: '2026 — Hiện tại',
         category: 'fashion',
         badge: 'Mảng Thời Trang',
         description:
           'Chỉ đạo toàn diện chiến lược tiếp thị, sáng tạo nội dung và hợp tác cùng các nghệ sĩ hàng đầu (Ngọc Trinh, Quốc Trường) tạo nên chiến dịch bùng nổ 500M+ views.',
       },
       {
+        company: 'CÔNG TY TNHH GOBROSS',
+        brand: 'Thời trang Montsand',
+        role: 'Leader Marketing',
+        period: '2025 — 2026',
+        category: 'fashion',
+        badge: 'Mảng Thời Trang',
+        description:
+          'Hoạch định chiến lược tăng trưởng khách hàng, tối ưu hóa tỷ lệ chuyển đổi cho hệ thống bán lẻ và kênh online cho thương hiệu thời trang Montsand.',
+      },
+      {
         company: 'CÔNG TY CỔ PHẦN DHARMA VIỆT NAM',
         brand: 'Thời trang DEZUS',
         role: 'Head Of Marketing',
+        period: '2022 — 2025',
         category: 'fashion',
         badge: 'Mảng Thời Trang',
         description:
           'Xây dựng hệ thống Kinh Doanh & Marketing đa kênh, đưa doanh thu DEZUS tăng gấp 3 lần năm 2025. Trực tiếp tổ chức Fashion Show "5 Châu" và chuỗi khai trương showroom lớn.',
       },
       {
-        company: 'CÔNG TY TNHH GOBROSS',
-        brand: 'Thời trang Montsand',
-        role: 'Leader Marketing',
-        category: 'fashion',
-        badge: 'Mảng Thời Trang',
+        company: 'CÔNG TY TNHH SHYNH BEAUTY',
+        brand: 'Shynh Premium',
+        role: 'Leader Marketing tại Shynh Premium',
+        period: '2019 — 2021',
+        category: 'beauty',
+        badge: 'Mảng Beauty & Thẩm Mỹ',
         description:
-          'Hoạch định chiến lược tăng trưởng khách hàng, tối ưu hóa tỷ lệ chuyển đổi cho hệ thống bán lẻ và kênh online cho thương hiệu thời trang Montsand.',
+          'Dẫn dắt các chiến dịch truyền thông và định vị thương hiệu cho Viện thẩm mỹ công nghệ cao Shynh Premium. Tiếp cận và chuyển đổi tệp khách hàng phân khúc cao cấp.',
       },
     ],
   },
@@ -574,12 +580,16 @@ export const initialPortfolioData: PortfolioData = {
       description:
         'Chiến dịch bùng nổ truyền thông thương hiệu Guno hợp tác cùng nghệ sĩ Ngọc Trinh & Quốc Trường, tạo làn sóng viral mạnh mẽ, đạt hơn 500 triệu lượt xem trên toàn bộ các nền tảng MXH.',
       link: 'https://www.facebook.com/tranhai68.rell',
-      col1Img1:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85',
-      col1Img2:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85',
-      col2Img:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85',
+      col1Img1: './images/guno-nt-qt-2.png',
+      col1Img2: './images/guno-nt-qt-4.jpg',
+      col2Img: './images/guno-nt-qt-1.png',
+      galleryImages: [
+        './images/guno-nt-qt-1.png',
+        './images/guno-nt-qt-2.png',
+        './images/guno-nt-qt-3.jpg',
+        './images/guno-nt-qt-4.jpg',
+        './images/guno-nt-qt-5.jpg',
+      ],
     },
     {
       number: '02',
@@ -600,11 +610,16 @@ export const initialPortfolioData: PortfolioData = {
       description:
         'Khởi tạo và thực thi thành công sự kiện thời trang quy mô lớn "5 Châu", thu hút sự quan tâm của giới mộ điệu thời trang và đạt hơn 20 triệu lượt tiếp cận trên các nền tảng số.',
       link: 'https://drive.google.com/drive/folders/1cMkbjeJWIzwpQvrdGEGAGAY0iX-45Fdf?usp=sharing',
-      col1Img1:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
-      col1Img2: './images/product-3.jpg',
-      col2Img:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85',
+      col1Img1: './images/dezus-show-3.png',
+      col1Img2: './images/dezus-show-2.png',
+      col2Img: './images/dezus-show-1.png',
+      galleryImages: [
+        './images/dezus-show-1.png',
+        './images/dezus-show-2.png',
+        './images/dezus-show-3.png',
+        './images/dezus-show-4.jpg',
+        './images/dezus-show-5.png',
+      ],
     },
     {
       number: '04',
@@ -613,10 +628,16 @@ export const initialPortfolioData: PortfolioData = {
       description:
         'Lên kế hoạch và dẫn dắt chương trình khai trương showroom mới của thương hiệu tại Đà Nẵng với sự tham gia của 5 nghệ sĩ nổi tiếng cùng hàng trăm khách mời, viral 50 triệu view.',
       link: 'https://drive.google.com/drive/folders/1zPVbwKPe2Rhu7Y9yz0CyHuT3nDBKCJ6z?usp=sharing',
-      col1Img1: './images/product-4.jpg',
-      col1Img2: './images/product-5.jpg',
-      col2Img:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      col1Img1: './images/dezus-danang-2.png',
+      col1Img2: './images/dezus-danang-3.jpg',
+      col2Img: './images/dezus-danang-1.jpg',
+      galleryImages: [
+        './images/dezus-danang-1.jpg',
+        './images/dezus-danang-2.png',
+        './images/dezus-danang-3.jpg',
+        './images/dezus-danang-4.jpg',
+        './images/dezus-danang-5.png',
+      ],
     },
   ],
   skillsData: [
@@ -876,11 +897,11 @@ export const initialPortfolioData: PortfolioData = {
   },
 };
 
-const STORAGE_KEY = 'portfolio_custom_data_v1';
+const STORAGE_KEY = 'portfolio_custom_data_v5';
 
 export function getStoredPortfolioData(): PortfolioData {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('portfolio_custom_data_v4');
     if (saved) {
       const parsed = JSON.parse(saved);
       return {
@@ -926,14 +947,23 @@ export function getStoredPortfolioData(): PortfolioData {
           ...initialPortfolioData.about,
           ...(parsed.about || {}),
           stats: parsed.about?.stats || initialPortfolioData.about.stats,
-          experiences: parsed.about?.experiences || initialPortfolioData.about.experiences,
+          experiences: parsed.about?.experiences?.length && parsed.about.experiences[0].period 
+            ? parsed.about.experiences 
+            : initialPortfolioData.about.experiences,
         },
         marquee: {
           ...initialPortfolioData.marquee,
           ...(parsed.marquee || {}),
-          row1: parsed.marquee?.row1 || initialPortfolioData.marquee.row1,
-          row2: parsed.marquee?.row2 || initialPortfolioData.marquee.row2,
+          row1: parsed.marquee?.row1?.some((r: any) => r.src?.includes('montsand-editorial'))
+            ? parsed.marquee.row1
+            : initialPortfolioData.marquee.row1,
+          row2: parsed.marquee?.row2?.some((r: any) => r.src?.includes('dezus-danang'))
+            ? parsed.marquee.row2
+            : initialPortfolioData.marquee.row2,
         },
+        projects: (parsed.projects && parsed.projects[2]?.col2Img?.includes('dezus-show'))
+          ? parsed.projects
+          : initialPortfolioData.projects,
         contact: {
           ...initialPortfolioData.contact,
           ...(parsed.contact || {}),

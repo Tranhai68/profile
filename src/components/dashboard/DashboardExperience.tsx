@@ -30,32 +30,40 @@ export const DashboardExperience: React.FC<DashboardExperienceProps> = ({
     setExpandedIndex(expandedIndex === idx ? null : idx);
   };
 
-  // Enriched experience details matching the user's career
-  const experienceDetails = [
+  // Detailed career breakdown keyed by brand
+  const experienceDetailsMap: Record<
+    string,
     {
-      period: '2023 — 2026',
-      responsibilities: [
-        'Định hướng toàn diện chiến lược tiếp thị, phân bổ ngân sách truyền thông cho chuỗi Viện Thẩm Mỹ công nghệ cao Shynh Premium.',
-        'Xây dựng các chiến dịch tiếp cận và thu hút tệp khách hàng thượng lưu (High-Net-Worth Individuals - HNWI).',
-        'Tối ưu hóa phễu tư vấn, nâng cao tỷ lệ chốt đơn các gói dịch vụ thẩm mỹ cao cấp tại các chi nhánh.',
-        'Quản trị hình ảnh thương hiệu trên báo chí, truyền hình và phối hợp cùng các bác sĩ, chuyên gia thẩm mỹ đầu ngành.',
-      ],
-      keyProjects: ['Chiến dịch Nâng Tầm Nhan Sắc Quý Bà', 'Ra mắt Công Nghệ Thẩm Mỹ Độc Quyền Shynh Premium'],
-      verifiedResults: ['Tăng 45% lượng khách hàng VIP đăng ký gói thẩm mỹ công nghệ cao', 'Xây dựng độ nhận diện thương hiệu hàng đầu trong phân khúc làm đẹp cao cấp'],
-    },
-    {
-      period: '2022 — 2024',
+      defaultPeriod: string;
+      responsibilities: string[];
+      keyProjects: string[];
+      verifiedResults: string[];
+    }
+  > = {
+    guno: {
+      defaultPeriod: '2026 — Hiện tại',
       responsibilities: [
         'Lãnh đạo toàn bộ phòng Marketing của thương hiệu thời trang Guno, quản lý đội ngũ 15+ nhân sự (Content, Media, Ads, Livestream).',
         'Trực tiếp đàm phán hợp đồng, lên ý tưởng thông điệp và đạo diễn chiến dịch hợp tác cùng nghệ sĩ hàng đầu (Ngọc Trinh, Quốc Trường).',
         'Phát triển hệ thống TikTok Shop & Livestream Commerce, đưa Guno trở thành thương hiệu thời trang dẫn đầu xu hướng Gen Z.',
         'Hoạch định kế hoạch ra mắt các bộ sưu tập theo mùa, kết hợp visual merchandising đồng bộ tại hệ thống cửa hàng.',
       ],
-      keyProjects: ['Siêu chiến dịch Guno x Ngọc Trinh - Quốc Trường (500M+ Views)', 'Chiến dịch Streetwear Series 2024'],
-      verifiedResults: ['Kỷ lục 500M+ lượt xem trên toàn bộ các nền tảng MXH', 'Doanh thu TikTok Shop và kênh online tăng trưởng hơn 250%'],
+      keyProjects: ['Siêu chiến dịch Guno x Ngọc Trinh - Quốc Trường (500M+ Views)', 'Chiến dịch Streetwear Series 2026'],
+      verifiedResults: ['Kỷ lục 500M+ lượt xem trên toàn bộ các nền tảng MXH', 'Doanh thu TikTok Shop và kênh online tăng trưởng bứt phá'],
     },
-    {
-      period: '2021 — 2025',
+    montsand: {
+      defaultPeriod: '2025 — 2026',
+      responsibilities: [
+        'Xây dựng chiến lược tăng trưởng khách hàng cho thương hiệu thời trang Montsand trên cả kênh bán lẻ offline và online.',
+        'Tối ưu hóa tỷ lệ chuyển đổi cho hệ thống showroom, huấn luyện kỹ năng tư vấn cho đội ngũ nhân viên cửa hàng.',
+        'Quản lý ngân sách Digital Ads (Facebook, Google) với mục tiêu tối ưu hóa ROAS và chi phí thu hút khách hàng mới (CAC).',
+        'Chỉ đạo sản xuất hình ảnh lookbook và các chiến dịch kích cầu theo mùa mang lại dòng tiền nhanh.',
+      ],
+      keyProjects: ['Ra mắt BST Signature Montsand Outerwear', 'Chiến dịch Retail Performance Growth 2025 - 2026'],
+      verifiedResults: ['Doanh thu chuỗi bán lẻ duy trì mức tăng trưởng ấn tượng', 'Mở rộng các điểm bán mới tại các trung tâm thương mại lớn'],
+    },
+    dezus: {
+      defaultPeriod: '2022 — 2025',
       responsibilities: [
         'Xây dựng và tái cơ cấu toàn diện hệ thống Kinh Doanh & Marketing đa kênh cho thương hiệu thời trang nam/nữ DEZUS.',
         'Thiết lập mô hình Marketing Metric dựa trên dữ liệu P&L, tối ưu hóa chi phí quảng cáo và nhân sự.',
@@ -65,18 +73,29 @@ export const DashboardExperience: React.FC<DashboardExperienceProps> = ({
       keyProjects: ['DEZUS Fashion Show 2025 | 5 Châu (20M+ Views)', 'Khai Trương Showroom Đà Nẵng (50M+ Views)', 'Chiến lược Metric x3 Doanh Thu 2025'],
       verifiedResults: ['Doanh thu DEZUS năm 2025 tăng gấp 3 lần so với năm trước', 'Hơn 70 triệu lượt tiếp cận tổng hợp qua các sự kiện khai trương và Runway'],
     },
-    {
-      period: '2019 — 2022',
+    shynh: {
+      defaultPeriod: '2019 — 2021',
       responsibilities: [
-        'Xây dựng chiến lược tăng trưởng khách hàng cho thương hiệu thời trang Montsand trên cả kênh bán lẻ offline và online.',
-        'Tối ưu hóa tỷ lệ chuyển đổi cho hệ thống showroom, huấn luyện kỹ năng tư vấn cho đội ngũ nhân viên cửa hàng.',
-        'Quản lý ngân sách Digital Ads (Facebook, Google) với mục tiêu tối ưu hóa ROAS và chi phí thu hút khách hàng mới (CAC).',
-        'Chỉ đạo sản xuất hình ảnh lookbook và các chiến dịch giảm giá theo mùa mang lại dòng tiền nhanh.',
+        'Định hướng toàn diện chiến lược tiếp thị, phân bổ ngân sách truyền thông cho chuỗi Viện Thẩm Mỹ công nghệ cao Shynh Premium.',
+        'Xây dựng các chiến dịch tiếp cận và thu hút tệp khách hàng thượng lưu (High-Net-Worth Individuals - HNWI).',
+        'Tối ưu hóa phễu tư vấn, nâng cao tỷ lệ chốt đơn các gói dịch vụ thẩm mỹ cao cấp tại các chi nhánh.',
+        'Quản trị hình ảnh thương hiệu trên báo chí, truyền hình và phối hợp cùng các bác sĩ, chuyên gia thẩm mỹ đầu ngành.',
       ],
-      keyProjects: ['Ra mắt BST Signature Montsand Outerwear', 'Chiến dịch Retail Performance Growth 2021'],
-      verifiedResults: ['Doanh thu chuỗi bán lẻ duy trì mức tăng trưởng 35%/năm', 'Mở rộng thêm 3 điểm bán mới tại các trung tâm thương mại lớn'],
+      keyProjects: ['Chiến dịch Nâng Tầm Nhan Sắc Quý Bà', 'Ra mắt Công Nghệ Thẩm Mỹ Độc Quyền Shynh Premium'],
+      verifiedResults: ['Tăng 45% lượng khách hàng VIP đăng ký gói thẩm mỹ công nghệ cao', 'Xây dựng độ nhận diện thương hiệu hàng đầu trong phân khúc làm đẹp cao cấp'],
     },
-  ];
+  };
+
+  const getDetailForExp = (exp: ExperienceItem, idx: number) => {
+    const brandLower = (exp.brand || '').toLowerCase();
+    const companyLower = (exp.company || '').toLowerCase();
+    if (brandLower.includes('guno') || companyLower.includes('guno')) return experienceDetailsMap.guno;
+    if (brandLower.includes('montsand') || companyLower.includes('montsand')) return experienceDetailsMap.montsand;
+    if (brandLower.includes('dezus') || companyLower.includes('dezus')) return experienceDetailsMap.dezus;
+    if (brandLower.includes('shynh') || companyLower.includes('shynh')) return experienceDetailsMap.shynh;
+    const values = Object.values(experienceDetailsMap);
+    return values[idx] || values[0];
+  };
 
   return (
     <div className="space-y-6">
@@ -106,7 +125,7 @@ export const DashboardExperience: React.FC<DashboardExperienceProps> = ({
       {/* 2. Interactive Timeline Cards */}
       <div className="relative pl-6 sm:pl-8 border-l-2 border-teal-500/40 dark:border-teal-500/30 space-y-6 my-4">
         {data.about.experiences.map((exp, idx) => {
-          const detail = experienceDetails[idx] || experienceDetails[0];
+          const detail = getDetailForExp(exp, idx);
           const isExpanded = expandedIndex === idx;
 
           return (
@@ -128,7 +147,7 @@ export const DashboardExperience: React.FC<DashboardExperienceProps> = ({
                   <div className="space-y-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                        {detail.period}
+                        {exp.period || detail.defaultPeriod}
                       </span>
                       <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
                         {exp.badge}

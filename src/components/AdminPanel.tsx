@@ -2153,7 +2153,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
                       <div>
                         <label className="text-[10px] text-slate-400 block mb-1">Tên Công Ty</label>
                         <input
@@ -2179,6 +2179,16 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                           value={exp.role}
                           onChange={(e) => updateExperienceItem(idx, 'role', e.target.value)}
                           className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] text-slate-400 block mb-1">Thời Gian (Niên Khóa)</label>
+                        <input
+                          type="text"
+                          value={exp.period || ''}
+                          placeholder="Ví dụ: 2026 — Hiện tại"
+                          onChange={(e) => updateExperienceItem(idx, 'period', e.target.value)}
+                          className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs font-mono"
                         />
                       </div>
                     </div>

@@ -13,6 +13,28 @@
   </head>
   <body class="bg-[#F4F6F9] text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white">
     <div id="root"></div>
+    <!-- Vite Local Dev Mode -->
     <script type="module" src="/src/main.tsx"></script>
+    <!-- GitHub Pages Production Fallback -->
+    <script type="module">
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const root = document.getElementById('root');
+          if (!root || root.children.length === 0) {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.crossOrigin = 'anonymous';
+            script.src = './assets/index-BYgZYzGF.js';
+            document.body.appendChild(script);
+
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.crossOrigin = 'anonymous';
+            link.href = './assets/index-CO1DmOg1.css';
+            document.head.appendChild(link);
+          }
+        }, 150);
+      });
+    </script>
   </body>
 </html>
