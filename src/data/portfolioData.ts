@@ -714,17 +714,20 @@ export const initialPortfolioData: PortfolioData = {
   ],
   education: [
     {
-      degree: 'Cử Nhân Quản Trị Kinh Doanh & Marketing',
-      school: 'Chuyên Ngành Marketing & Tiếp Thị Thương Mại',
-      year: '2012 — 2016',
+      degree: 'Thiết Kế Đồ Hoạ',
+      school: 'FPT Arena Multimedia — Trường Đào Tạo Mỹ Thuật Đa Phương Tiện',
+      year: '2018',
       badge: 'Đại Học Chính Quy',
-      description: 'Nền tảng vững chắc về kinh tế học, nghiên cứu hành vi người tiêu dùng, quản trị chiến lược và quản lý tài chính doanh nghiệp.',
-      highlights: ['Tốt nghiệp chuyên ngành Tiếp Thị Thương Mại', 'Trưởng ban truyền thông các sự kiện học thuật'],
+      description: 'Đào tạo bài bản về tư duy mỹ thuật đa phương tiện, thiết kế đồ họa ứng dụng, nhận diện thương hiệu và sáng tạo nội dung thị giác kỹ thuật số.',
+      highlights: [
+        'Tốt nghiệp chuyên ngành Thiết Kế Đồ Hoạ Multimedia',
+        'Đồ án xuất sắc về thiết kế hệ thống nhận diện thương hiệu & Digital Media',
+      ],
     },
     {
       degree: 'Chứng Chỉ CMO Executive Leadership',
       school: 'Chương Trình Đào Tạo Giám Đốc Marketing Chuyên Nghiệp',
-      year: '2019',
+      year: '2023',
       badge: 'Executive Certificate',
       description: 'Nâng cao năng lực lãnh đạo chiến lược, xây dựng mô hình tăng trưởng doanh số bền vững và quản trị trải nghiệm khách hàng.',
       highlights: ['Phân tích mô hình P&L cho nhãn hàng thời trang/làm đẹp', 'Hoạch định chiến lược truyền thông tích hợp (IMC)'],
@@ -732,7 +735,7 @@ export const initialPortfolioData: PortfolioData = {
     {
       degree: 'Data-Driven & Performance Marketing Masterclass',
       school: 'Meta & Google Business Academy',
-      year: '2021 — 2023',
+      year: '2022 — 2024',
       badge: 'Certified Specialist',
       description: 'Chuyên sâu về thuật toán phân phối quảng cáo, tối ưu hóa tỷ lệ chuyển đổi (CRO), tracking phễu người dùng và marketing tự động.',
       highlights: ['Master Meta Ads & TikTok Pixel tracking', 'Tối ưu hóa ROAS và LTV khách hàng'],
@@ -740,7 +743,7 @@ export const initialPortfolioData: PortfolioData = {
     {
       degree: 'AI-Powered Marketing & Automation Certificate',
       school: 'AI Growth Frameworks & Generative Media',
-      year: '2024 — 2026',
+      year: '2025 — 2026',
       badge: 'AI Pioneer',
       description: 'Tiên phong ứng dụng AI thế hệ mới (Midjourney, LLMs, Automation Pipelines) vào hoạt động sản xuất nội dung và điều phối tiếp thị.',
       highlights: ['Xây dựng pipeline sản xuất hình ảnh bằng Generative AI', 'Tự động hóa báo cáo và phân tích dữ liệu đa kênh'],
@@ -897,7 +900,7 @@ export const initialPortfolioData: PortfolioData = {
   },
 };
 
-const STORAGE_KEY = 'portfolio_custom_data_v6';
+const STORAGE_KEY = 'portfolio_custom_data_v7';
 
 export function getStoredPortfolioData(): PortfolioData {
   try {
