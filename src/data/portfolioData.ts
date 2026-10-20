@@ -309,7 +309,7 @@ export const initialPortfolioData: PortfolioData = {
     locationText: '📍 TP. Hồ Chí Minh • Tư vấn chiến lược toàn quốc',
     ctaButtonText: 'Xem Control Panel',
     bottomNotice: 'Hệ thống Dashboard điều khiển 10 mục quản trị sẵn sàng bên dưới',
-    cvUrl: 'https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view',
+    cvUrl: './Tran-Hai-Executive-Portfolio.pdf',
     cvButtonText: 'Tải CV (PDF)',
     exploreButtonText: 'Khám Phá System Dashboard',
     menuHomeText: 'Home',
@@ -424,7 +424,7 @@ export const initialPortfolioData: PortfolioData = {
     badge: 'Sẵn Sàng Hợp Tác • Quý 4/2026',
     title: 'Bạn Đang Tìm Kiếm Giám Đốc Marketing (CMO) Hoặc Cố Vấn Tăng Trưởng?',
     description: 'Sẵn sàng mang đến những chiến dịch đột phá triệu view, tối ưu hóa ngân sách P&L và nhân bội doanh số bán lẻ thời trang & làm đẹp.',
-    cvUrl: 'https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view',
+    cvUrl: './Tran-Hai-Executive-Portfolio.pdf',
     cvButtonText: 'Tải CV Bản Đầy Đủ',
     contactButtonText: 'Liên Hệ Ngay',
   },
@@ -897,11 +897,11 @@ export const initialPortfolioData: PortfolioData = {
   },
 };
 
-const STORAGE_KEY = 'portfolio_custom_data_v5';
+const STORAGE_KEY = 'portfolio_custom_data_v6';
 
 export function getStoredPortfolioData(): PortfolioData {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('portfolio_custom_data_v4');
+    const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('portfolio_custom_data_v5');
     if (saved) {
       const parsed = JSON.parse(saved);
       return {

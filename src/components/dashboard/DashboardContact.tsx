@@ -156,13 +156,14 @@ export const DashboardContact: React.FC<DashboardContactProps> = ({ data }) => {
               Tải CV định dạng PDF đầy đủ về bảng số liệu chi tiết, các chiến dịch 500M+ views và dự án x3 doanh thu.
             </p>
             <a
-              href="https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view"
+              href="./Tran-Hai-Executive-Portfolio.pdf"
+              download="Tran-Hai-Executive-Portfolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-teal-900 text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm hover:shadow transition-all"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Tải CV PDF (Direct Link)</span>
+              <span>Tải Hồ Sơ PDF (Executive Dossier)</span>
             </a>
           </div>
         </div>

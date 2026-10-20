@@ -160,7 +160,8 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
             {data.hero.menuAboutText || 'About me'}
           </button>
           <a
-            href={data.hero.cvUrl || 'https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view'}
+            href={data.hero.cvUrl || './Tran-Hai-Executive-Portfolio.pdf'}
+            download="Tran-Hai-Executive-Portfolio.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-bold text-white/85 hover:text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)] transition-colors"
@@ -355,7 +356,8 @@ export const Hero3DSection: React.FC<Hero3DSectionProps> = ({
 
         <div className="flex items-center gap-3">
           <a
-            href={data.hero.cvUrl || 'https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view'}
+            href={data.hero.cvUrl || './Tran-Hai-Executive-Portfolio.pdf'}
+            download="Tran-Hai-Executive-Portfolio.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-white/85 hover:bg-white text-slate-900 text-xs font-bold px-4 py-2 rounded-xl shadow-sm transition-all"

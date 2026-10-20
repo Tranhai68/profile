@@ -712,13 +712,14 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
         <div className="flex items-center gap-3 shrink-0">
           <a
-            href={data.executiveBanner?.cvUrl || data.hero.cvUrl || 'https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view'}
+            href={data.executiveBanner?.cvUrl || data.hero.cvUrl || './Tran-Hai-Executive-Portfolio.pdf'}
+            download="Tran-Hai-Executive-Portfolio.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-900 text-xs sm:text-sm font-bold px-5 py-3 rounded-xl shadow-md transition-all"
           >
             <Download className="w-4 h-4 text-teal-600" />
-            <span>{data.executiveBanner?.cvButtonText || 'Tải CV Bản Đầy Đủ'}</span>
+            <span>{data.executiveBanner?.cvButtonText || 'Tải CV Bản Đầy Đủ (PDF)'}</span>
           </a>
 
           <button

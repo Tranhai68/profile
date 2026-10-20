@@ -275,13 +275,14 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
             {/* Quick CV Download */}
             <a
-              href={data.hero?.cvUrl || 'https://drive.google.com/file/d/1Z_u10aD60H39eBvEGB8l0rV3Z57l87oT/view'}
+              href={data.hero?.cvUrl || './Tran-Hai-Executive-Portfolio.pdf'}
+              download="Tran-Hai-Executive-Portfolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-1 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 text-xs font-bold px-3 py-1.5 rounded-xl transition-all shadow-xs"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Tải CV</span>
+              <span>Tải CV (PDF)</span>
             </a>
           </div>
         </header>
